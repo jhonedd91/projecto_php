@@ -1,0 +1,12 @@
+.parent_div {
+  display: table;
+  width: 40%;
+  /* width: 10px; */
+  height: 438px;
+}
+#form_login {
+  display: table-cell !important;
+  text-align: center !important;
+  vertical-align: middle !important;
+  padding: 130px 0px 0px 0px;
+}
