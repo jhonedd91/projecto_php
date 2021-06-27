@@ -1,2 +1,2 @@
-# projecto_php
-Is a single proyect with php.
+# Projecto en php
+Es un simple projecto en php.
