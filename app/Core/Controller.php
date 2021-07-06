@@ -25,11 +25,27 @@ class Controller{
         }
     }
 
-    public function viewAdministrator(){
-
+    public function viewAdmin($view,$Data=[]){
+        if(file_exists('../app/View/Administrador/'.$view.'.php')){
+            require_once('../app/View/Structure/header.php');
+            require_once('../app/View/Structure/navUser.php');
+            require_once('../app/View/Administrador/'.$view.'.php');
+            require_once('../app/View/Structure/footer.php');
+        }
     }
 
-    public function viewCabecera($Cabecera, $Cuerpo, $Data=[], $Data2=[]) {
+    public function generalView($folderName,$viewName,$Data=[]){
+        if(file_exists('../app/View/'.$folderName.'/'.$viewName.'.php')){
+            require_once('../app/View/Structure/header.php');
+            require_once('../app/View/Structure/navUser.php');
+            require_once('../app/View/'.$folderName.'/'.$viewName.'.php');
+            require_once('../app/View/Structure/footer.php');
+        }else{
+            echo "View : (".$viewName.") Not Found in folder : (".$folderName.")";
+        }
+    }
+
+    /*public function viewCabecera($Cabecera, $Cuerpo, $Data=[], $Data2=[]) {
 
 		if (file_exists('../app/View/' . $Cuerpo . '.php')) {
 			if(isset($_SESSION[$Cabecera])){
@@ -44,7 +60,7 @@ class Controller{
 			}
 	
 		}
-	}
+	}*/
 	
     public function model($model){
         if (file_exists('../app/Model/' . $model .'.php')) {
